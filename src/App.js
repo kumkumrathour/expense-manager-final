@@ -29,10 +29,12 @@ const App = () => {
   const [expenses, setexpenses] = useState(initialState);
 
   const addExpenseHandler = expense => {
-    console.log('In App.js');
     console.log(expense);
-    expenses.push(expense);
-    setexpenses(expenses);
+    setexpenses((prevExpense)=>{
+      return [expense,...prevExpense];
+    });
+    // expenses.push(expense);
+    // setexpenses(expenses);
   };
 
   // return React.createElement(
